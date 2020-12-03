@@ -1,4 +1,4 @@
-# super-single-page
+# vuepress-blog-deploy
 
 ## 快速上手
 
