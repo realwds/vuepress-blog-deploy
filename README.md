@@ -1,4 +1,4 @@
-# vuepress-blog-deploy
+# vuepress-blog-deploy [![](https://github.com/realwds/vuepress-blog-deploy/workflows/CI/badge.svg)](https://github.com/realwds/vuepress-blog-deploy/actions)
 
 ## 快速上手
 
