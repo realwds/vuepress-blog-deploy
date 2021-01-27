@@ -25,7 +25,6 @@ module.exports = {
   },
 
   theme: 'vdoing', // 使用依赖包主题
-  // theme: require.resolve('../../theme-vdoing'), // 使用本地主题
 
   themeConfig: {
     // 主题配置
@@ -38,34 +37,6 @@ module.exports = {
     docsDir: 'docs', // 编辑的文件夹
     editLinks: true, // 启用编辑
     editLinkText: '编辑',
-
-    //*** 以下配置是Vdoing主题改动和新增的配置 ***//
-
-    // category: false, // 是否打开分类功能，默认true。 如打开，会做的事情有：1. 自动生成的frontmatter包含分类字段 2.页面中显示与分类相关的信息和模块 3.自动生成分类页面（在@pages文件夹）。如关闭，则反之。
-    // tag: false, // 是否打开标签功能，默认true。 如打开，会做的事情有：1. 自动生成的frontmatter包含标签字段 2.页面中显示与标签相关的信息和模块 3.自动生成标签页面（在@pages文件夹）。如关闭，则反之。
-    // archive: false, // 是否打开归档功能，默认true。 如打开，会做的事情有：1.自动生成归档页面（在@pages文件夹）。如关闭，则反之。
-    // categoryText: '随笔', // 碎片化文章（_posts文件夹的文章）预设生成的分类值，默认'随笔'
-
-    // bodyBgImg: [
-    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
-    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
-    //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175846.jpeg'
-    // ], // body背景大图，默认无。 单张图片 String || 多张图片 Array, 多张图片时每隔15秒换一张。
-    // bodyBgImgOpacity: 0.5, // body背景图透明度，选值 0 ~ 1.0, 默认0.5
-
-    // titleBadge: false, // 文章标题前的图标是否显示，默认true
-    // titleBadgeIcons: [ // 文章标题前图标的地址，默认主题内置图标
-    //   '图标地址1',
-    //   '图标地址2'
-    // ],
-    // contentBgStyle: 1, // 文章内容块的背景风格，默认无. 1 => 方格 | 2 => 横线 | 3 => 竖线 | 4 => 左斜线 | 5 => 右斜线 | 6 => 点状
-
-    // updateBar: { // 最近更新栏
-    //   showToArticle: true, // 显示到文章页底部，默认true
-    //   moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
-    // },
-    // sidebarOpen: false, // 初始状态是否打开侧边栏，默认true
-    // pageButton: false, // 是否显示快捷翻页按钮，默认true
 
     sidebar: 'structuring', // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
 
@@ -111,10 +82,10 @@ module.exports = {
   },
   plugins: [
     // 插件
-    // [require('./plugins/love-me'), { // 鼠标点击爱心特效
-    //   color: '#11a8cd', // 爱心颜色，默认随机色
-    //   excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
-    // }],
+    [require('./plugins/love-me'), { // 鼠标点击爱心特效
+      color: '#11a8cd', // 爱心颜色，默认随机色
+      excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
+    }],
 
     [
       'thirdparty-search',
@@ -146,8 +117,6 @@ module.exports = {
         ],
       },
     ],
-
-    'vuepress-plugin-baidu-autopush', // 百度自动推送
 
     [
       'one-click-copy',
@@ -184,42 +153,6 @@ module.exports = {
           bgColor: 'rgba(0,0,0,0.6)',
         },
       },
-    ],
-    // [
-    //   'vuepress-plugin-baidu-tongji', // 百度统计
-    //   {
-    //     hm: '503f098e7e5b3a5b5d8c5fc2938af002',
-    //   },
-    // ],
-    [
-      'vuepress-plugin-comment', // 评论
-      // {
-      //   choosen: 'valine',
-      //   options: {
-      //     el: '#valine-vuepress-comment',
-      //     appId: 'qnS1jobNF7CROIQ0XYWBnVOH-gzGzoHsz',
-      //     appKey: 'LIKa0ePqFMkglQfOkN0JNK6c',
-      //     avatar: 'monsterid'
-      //   }
-      // },
-      // {
-      //   choosen: 'gitalk',
-      //   options: {
-      //     clientID: 'a6e1355287947096b88b',
-      //     clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-      //     repo: 'blog-gitalk-comment', // GitHub 仓库
-      //     owner: 'xugaoyi', // GitHub仓库所有者
-      //     admin: ['xugaoyi'], // 对仓库有写权限的人
-      //     // distractionFreeMode: true,
-      //     pagerDirection: 'last', // 'first'正序 | 'last'倒序
-      //     id:
-      //       '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-      //     title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-      //     labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-      //     body:
-      //       '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-      //   },
-      // },
     ],
     [
       '@vuepress/last-updated', // "上次更新"时间格式
