@@ -1,7 +1,7 @@
 const nav = require('./config/nav.js');
 
 module.exports = {
-  title: "wangdongsheng's blog",
+  title: "realwds's blog",
   description:
     'web前端技术博客,简洁至上,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github等技术文章。', // 描述,以 <meta> 标签渲染到页面html中
   base: '/vuepress-blog-deploy/', // '/<github仓库名>/'， 默认'/'
@@ -16,7 +16,7 @@ module.exports = {
           '前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown',
       },
     ],
-    ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站点拥有者验证
+    // ['meta', { name: 'baidu-site-verification', content: '7F55weZDDc' }], // 百度统计的站点拥有者验证
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
     // ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'}], // 移动端阻止页面缩放
   ],
@@ -77,9 +77,9 @@ module.exports = {
     blogger: {
       // 博主信息，显示在首页侧边栏
       avatar:
-        'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200103123203.jpg',
-      name: 'wangdongsheng',
-      slogan: 'how are you? i am fine, thanks.',
+        'https://vercel.disnot.com/img/home.png',
+      name: 'realwds',
+      slogan: 'Delicate facial features are the beginning of the heart, charming temperament is the abyss of emotion.',
     },
     social: {
       // 社交图标，显示于博主信息栏和页脚栏
@@ -98,7 +98,7 @@ module.exports = {
         {
           iconClass: 'icon-erji',
           title: 'Gitee',
-          link: 'https://gitee.com/wrongcode',
+          link: 'https://gitee.com/realwds',
         },
       ],
     },
@@ -106,7 +106,7 @@ module.exports = {
       // 页脚信息
       createYear: 2019, // 博客创建年份
       copyrightInfo:
-        'wangdongsheng | <a href="https://github.com/realwds" target="_blank">GitHub</a>', // 博客版权信息，支持a标签
+        'realwds | <a href="https://github.com/realwds" target="_blank">GitHub</a>', // 博客版权信息，支持a标签
     },
   },
   plugins: [
@@ -185,12 +185,12 @@ module.exports = {
         },
       },
     ],
-    [
-      'vuepress-plugin-baidu-tongji', // 百度统计
-      {
-        hm: '503f098e7e5b3a5b5d8c5fc2938af002',
-      },
-    ],
+    // [
+    //   'vuepress-plugin-baidu-tongji', // 百度统计
+    //   {
+    //     hm: '503f098e7e5b3a5b5d8c5fc2938af002',
+    //   },
+    // ],
     [
       'vuepress-plugin-comment', // 评论
       // {
@@ -202,24 +202,24 @@ module.exports = {
       //     avatar: 'monsterid'
       //   }
       // },
-      {
-        choosen: 'gitalk',
-        options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id:
-            '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-        },
-      },
+      // {
+      //   choosen: 'gitalk',
+      //   options: {
+      //     clientID: 'a6e1355287947096b88b',
+      //     clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
+      //     repo: 'blog-gitalk-comment', // GitHub 仓库
+      //     owner: 'xugaoyi', // GitHub仓库所有者
+      //     admin: ['xugaoyi'], // 对仓库有写权限的人
+      //     // distractionFreeMode: true,
+      //     pagerDirection: 'last', // 'first'正序 | 'last'倒序
+      //     id:
+      //       '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
+      //     title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
+      //     labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
+      //     body:
+      //       '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+      //   },
+      // },
     ],
     [
       '@vuepress/last-updated', // "上次更新"时间格式
